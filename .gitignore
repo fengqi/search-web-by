@@ -34,7 +34,6 @@ ntuser.ini
 # macOS
 .AppleDouble
 .LSOverride
-Icon?
 ._*
 
 # IDE specific files
