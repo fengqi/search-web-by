@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Text Search Assistant 设置</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      min-width: 400px;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h2 {
+      color: #333;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      text-align: center;
+      margin-top: 0;
+    }
+    
+    .section {
+      margin-bottom: 25px;
+    }
+    
+    .section h3 {
+      text-align: center;
+      color: #555;
+      margin-top: 0;
+    }
+    
+    .section p {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .checkbox-group {
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .checkbox-item {
+      flex: 0 1 calc(50% - 20px);
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    
+    .checkbox-item:hover {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-color: #ddd;
+    }
+    
+    .checkbox-item label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    
+    .site-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    
+    .ignored-url {
+      display: flex;
+      margin: 8px 0;
+    }
+    
+    .ignored-url input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    .ignored-url button {
+      background-color: #f44336;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 8px;
+      font-size: 14px;
+    }
+    
+    .ignored-url button:hover {
+      background-color: #d32f2f;
+    }
+    
+    #addUrl {
+      background-color: #2196F3;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      display: block;
+      margin: 15px auto;
+    }
+    
+    #addUrl:hover {
+      background-color: #0b7dda;
+    }
+    
+    #save {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 25px auto;
+      width: 200px;
+    }
+    
+    #save:hover {
+      background-color: #45a049;
+    }
+    
+    #status {
+      text-align: center;
+      margin-top: 15px;
+      color: #4CAF50;
+      font-weight: bold;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Text Search Assistant 设置</h2>
+    
+    <div class="section">
+      <h3>启用的搜索网站</h3>
+      <div class="checkbox-group">
+        <div class="checkbox-item">
+          <label>
+            <input type="checkbox" id="jd" name="sites" value="jd">
+            <img class="site-icon" src="./icons/jd.png" alt="京东图标">
+            <span>京东</span>
+          </label>
+        </div>
+        <div class="checkbox-item">
+          <label>
+            <input type="checkbox" id="taobao" name="sites" value="taobao">
+            <img class="site-icon" src="./icons/taobao.png" alt="淘宝图标">
+            <span>淘宝</span>
+          </label>
+        </div>
+        <div class="checkbox-item">
+          <label>
+            <input type="checkbox" id="xianyu" name="sites" value="xianyu">
+            <img class="site-icon" src="./icons/xianyu.png" alt="闲鱼图标">
+            <span>闲鱼</span>
+          </label>
+        </div>
+        <div class="checkbox-item">
+          <label>
+            <input type="checkbox" id="google" name="sites" value="google">
+            <img class="site-icon" src="./icons/google.png" alt="Google图标">
+            <span>Google</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h3>忽略的网址</h3>
+      <p>在这些网址中不会显示搜索图标：</p>
+      <div id="ignoredUrlsContainer">
+        <!-- 动态添加忽略的网址 -->
+      </div>
+      <button id="addUrl">添加网址</button>
+    </div>
+    
+    <button id="save">保存设置</button>
+    <div id="status"></div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
